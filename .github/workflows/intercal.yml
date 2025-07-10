@@ -11,7 +11,7 @@ jobs:
       - name: compileth codeth
         run: |
           ick -c src/hello.i -o hello.c > hellopiped.c
-          ls
+          ls # bump
       - uses: actions/upload-artifact@v4
         with:
           path: hello.c
