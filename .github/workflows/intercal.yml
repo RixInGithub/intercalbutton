@@ -11,7 +11,8 @@ jobs:
       - name: compileth codeth
         run: |
           tree
-          ick -b -c=hello.c ./src/hello.i
+          ick -bc ./src/hello.i
+          mv ./src/hello.c ./hello.c
           ls -l hello.c
       - uses: actions/upload-artifact@v4
         with:
