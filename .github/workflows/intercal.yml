@@ -11,7 +11,6 @@ jobs:
       - name: compileth codeth
         run: |
           ick -c src/hello.i -o hello.c
-            - name: Upload artifact
       - uses: actions/upload-artifact@v4
         with:
           path: hello.c
