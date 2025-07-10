@@ -12,8 +12,8 @@ jobs:
         run: |
           tree
           cat ./src/hello.i
-          ick -b -c hello.c ./src/hello.i
+          ick -bc ./src/hello.i
           tree
       - uses: actions/upload-artifact@v4
         with:
-          path: hello.c
+          path: ./src/hello.c
