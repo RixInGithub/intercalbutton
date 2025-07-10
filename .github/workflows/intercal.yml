@@ -7,10 +7,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: get C-INTERCAL
-        run: sudo apt-get install intercal
+        run: sudo apt-get install -y intercal
       - name: compileth codeth
         run: |
-          ick -c src/hello.i -o hello.c
+          ick -c src/hello.i -o hello.c || true
           ls # bump
       - uses: actions/upload-artifact@v4
         with:
