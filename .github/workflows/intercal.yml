@@ -1,4 +1,4 @@
-name: build-ick
+name: build intercal
 on: [push]
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
         run: sudo apt-get install intercal
       - name: compileth codeth
         run: |
-          ick -c src/hello.i -o hello.c
+          ick -c src/hello.i > hello.c
       - uses: actions/upload-artifact@v4
         with:
           path: hello.c
