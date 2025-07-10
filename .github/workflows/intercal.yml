@@ -1,0 +1,17 @@
+name: build-ick
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: get C-INTERCAL
+        run: sudo apt-get install intercal
+      - name: compileth codeth
+        run: |
+          ick -c src/hello.i -o hello.c
+            - name: Upload artifact
+      - uses: actions/upload-artifact@v4
+        with:
+          path: hello.c
