@@ -10,7 +10,7 @@ jobs:
         run: sudo apt-get install intercal
       - name: compileth codeth
         run: |
-          ick -c src/hello.i -o hello.c > hellopiped.c
+          ick -c src/hello.i -o hello.c
           ls # bump
       - uses: actions/upload-artifact@v4
         with:
