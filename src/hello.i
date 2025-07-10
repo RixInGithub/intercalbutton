@@ -8,7 +8,7 @@ PLEASE DO ,1 SUB #6 <- #194
 DO ,1 SUB #7 <- #48
 PLEASE DO ,1 SUB #8 <- #22
 DO ,1 SUB #9 <- #248
-PLEASE DO ,1 SUB #10 <- #168
+DO ,1 SUB #10 <- #168
 DO ,1 SUB #11 <- #24
 DO ,1 SUB #12 <- #16
 DO ,1 SUB #13 <- #162
