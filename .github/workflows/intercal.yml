@@ -14,8 +14,8 @@ jobs:
           tree
           ick -ceb ./src/hello.i
           mv ./src/hello.c ./hello.c
-          LIBICKSRC=$(find libick -name '*.c')
           cd libick
+          LIBICKSRC=$(find . -name '*.c')
           emcc ../hello.c ../libs/customdom.c $LIBICKSRC -I. -o ../hello.js -sEXPORTED_FUNCTIONS=_main -sSTANDALONE_WASM=1 -sEXIT_RUNTIME=1 -sALLOW_MEMORY_GROWTH=1 -sENVIRONMENT=web -sMODULARIZE=1
           cd ..
           ls -l hello.js
