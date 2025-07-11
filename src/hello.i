@@ -1,3 +1,4 @@
+EXTERNAL FUNCTION "dom_querySelector" RETURNS STASH
 PLEASE DO ,1 <- #13
 PLEASE DO ,1 SUB #1 <- #238
 DO ,1 SUB #2 <- #108
@@ -13,5 +14,9 @@ DO ,1 SUB #11 <- #24
 DO ,1 SUB #12 <- #16
 DO ,1 SUB #13 <- #162
 PLEASE READ OUT ,1
+DO .76 <- #38
+DO .77 <- #38
+DO .78 <- CALL "dom_querySelector" WITH .76, .77
+PLEASE WRITE OUT .78
 DO NOTHING
 PLEASE GIVE UP
