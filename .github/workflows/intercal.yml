@@ -8,6 +8,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: get C-INTERCAL
         run: sudo apt-get install -y intercal
+      - uses: mymindstorm/setup-emsdk@v14
       - name: compileth codeth
         run: |
           tree
