@@ -15,7 +15,7 @@ jobs:
           tar -zcvf libick.tgz /usr/include/ick-0.29
           ick -ceb ./src/hello.i
           mv ./src/hello.c ./hello.c
-          gzip hello.c -k -o
+          gzip hello.c -k
           exit 0
           LIBICKSRC=$(find /usr/include/ick-0.29 -name '*.c')
           emcc hello.c libs/customdom.c $LIBICKSRC -I/usr/include/ick-0.29 -o ../hello.js -sEXPORTED_FUNCTIONS=_main -sSTANDALONE_WASM=1 -sEXIT_RUNTIME=1 -sALLOW_MEMORY_GROWTH=1 -sENVIRONMENT=web -sMODULARIZE=1
