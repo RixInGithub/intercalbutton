@@ -1,8 +1,7 @@
 #include "ick_ec.h"
 #include <emscripten.h>
 
-ICK_EC_FUNC(dom_querySelector)
-{
+ICK_EC_FUNC_START(dom_querySelector)
 	EM_ASM({
 		console.log("wowza")
 	});
