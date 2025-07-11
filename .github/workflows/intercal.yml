@@ -26,4 +26,5 @@ jobs:
           path: hello.c.gz
       - uses: actions/upload-artifact@v4
         with:
+          name: libick.tgz
           path: libick.tgz
