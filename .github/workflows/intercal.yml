@@ -15,7 +15,9 @@ jobs:
           ick -ceb ./src/hello.i
           mv ./src/hello.c ./hello.c
           LIBICKSRC=$(find libick -name '*.c')
-          emcc hello.c libs/customdom.c -Iick -o hello.js -sEXPORTED_FUNCTIONS=_main -sSTANDALONE_WASM=1 -sEXIT_RUNTIME=1 -sALLOW_MEMORY_GROWTH=1 -sENVIRONMENT=web -sMODULARIZE=1
+          cd libick
+          emcc ../hello.c ../libs/customdom.c -Iick -o ../hello.js -sEXPORTED_FUNCTIONS=_main -sSTANDALONE_WASM=1 -sEXIT_RUNTIME=1 -sALLOW_MEMORY_GROWTH=1 -sENVIRONMENT=web -sMODULARIZE=1
+          cd ..
           ls -l hello.js
           tree
       - uses: actions/upload-artifact@v4
