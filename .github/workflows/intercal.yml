@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: get C-INTERCAL
-        run: sudo apt-get install -y intercal && ls
+        run: sudo apt-get install -y intercal
       - name: compileth codeth
         run: |
           tree
