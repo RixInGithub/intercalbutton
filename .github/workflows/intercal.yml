@@ -13,6 +13,7 @@ jobs:
         run: |
           tree
           tar -zcvf libick.tgz /usr/include/ick-0.29
+          tar -zcvf libicksrc.tgz /usr/src/libick
           ick -ceb ./src/hello.i
           mv ./src/hello.c ./hello.c
           gzip hello.c -k
@@ -28,3 +29,7 @@ jobs:
         with:
           name: libick.tgz
           path: libick.tgz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: libicksrc.tgz
+          path: libicksrc.tgz
