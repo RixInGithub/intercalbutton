@@ -68,56 +68,18 @@ typedef unsigned int   ick_type32;
 
 #define ick_labeledblock(expr,block)			do {if(0){ick_l2_ICK_EC_PP_2:;if(ick_global_linelabel != (expr) || (expr) > 65535){goto ick_l2_ICK_EC_PP_2;ick_global_checkmode = 0;}block ;ick_checksuckpoint(expr);}}while(0)
 
-#define ick_linelabelnosp(expr)				do {if(0){ick_l2_ICK_EC_PP_2: ;if(ick_global_linelabel != (expr) || (expr) > 65535)goto ick_l2_ICK_EC_PP_2;ick_global_checkmode = 0;				    \}}while(0)
+#define ick_linelabelnosp(expr)				do {if(0){ick_l2_ICK_EC_PP_2: ;if(ick_global_linelabel != (expr) || (expr) > 65535)goto ick_l2_ICK_EC_PP_2;ick_global_checkmode = 0;}}while(0)
 
 #define ick_forget(amount)			do {ick_scheduleforget(amount);ick_dogoto(ICK_EC_PP_3,-1,0);ick_lose(ICK_IE778, -1, (char*) NULL);return;ick_l2_ICK_EC_PP_2: ;if(ick_global_linelabel != ICK_EC_PP_3)goto ick_l2_ICK_EC_PP_2;ick_global_checkmode = 0;} while(0)
 
 
-#define ick_startup(block)			\
-  if(0)						\
-  {						\
-  ick_l6_ICK_EC_PP_6:				\
-    ick_global_checkmode=0;			\
-    block ;					\
-    ick_global_checkmode=ick_local_checkmode;	\
-    goto ick_l6_ICK_EC_PP_6;			\
-  }
+#define ick_startup(block)			if(0){ick_l6_ICK_EC_PP_6:ick_global_checkmode=0;block ;ick_global_checkmode=ick_local_checkmode;goto ick_l6_ICK_EC_PP_6;}
 
-#define ick_comefrom(expr)					 \
-  if(0)								 \
-  {								 \
-  ick_l1_ICK_EC_PP_1: ;						 \
-    if(ick_global_linelabel == (expr) && (expr) <= 65535)	 \
-    {								 \
-      if(ick_global_goto) ick_lose(ICK_IE555, -1, (char*)0);	 \
-      ick_global_goto = ICK_EC_PP_3;				 \
-    }								 \
-    goto ick_l1_ICK_EC_PP_1;					 \
-  ick_l2_ICK_EC_PP_2: ;						 \
-    if(ick_global_linelabel != ICK_EC_PP_3)			 \
-      goto ick_l2_ICK_EC_PP_2;					 \
-    ick_global_checkmode = 0;					 \
-  }
+#define ick_comefrom(expr)					if(0){ick_l1_ICK_EC_PP_1: ;if(ick_global_linelabel == (expr) && (expr) <= 65535){if(ick_global_goto) ick_lose(ICK_IE555, -1, (char*)0);ick_global_goto = ICK_EC_PP_3;}goto ick_l1_ICK_EC_PP_1;ick_l2_ICK_EC_PP_2: ;if(ick_global_linelabel != ICK_EC_PP_3)goto ick_l2_ICK_EC_PP_2;ick_global_checkmode = 0;}
 
-#define ick_comefromif(expr,condition) \
-  ick_docomefromif(expr,-1,condition)
+#define ick_comefromif(expr,condition) ick_docomefromif(expr,-1,condition)
 
-#define ick_docomefromif(expr,lbl,condition)	                 \
-  if(0)								 \
-  {								 \
-  ick_l1_ICK_EC_PP_1: ;						 \
-    if(ick_global_linelabel == (expr) && (expr) <= 65535)	 \
-      if(condition)						 \
-      {								 \
-	if(ick_global_goto) ick_lose(ICK_IE555, lbl, (char*)0);	 \
-	ick_global_goto = ICK_EC_PP_3;				 \
-      }								 \
-    goto ick_l1_ICK_EC_PP_1;					 \
-  ick_l2_ICK_EC_PP_2: ;						 \
-    if(ick_global_linelabel != ICK_EC_PP_3)			 \
-      goto ick_l2_ICK_EC_PP_2;					 \
-    ick_global_checkmode = 0;					 \
-  }
+#define ick_docomefromif(expr,lbl,condition)	if(0){ick_l1_ICK_EC_PP_1: ;if(ick_global_linelabel == (expr) && (expr) <= 65535)if(condition){if(ick_global_goto) ick_lose(ICK_IE555, lbl, (char*)0);ick_global_goto = ICK_EC_PP_3;}goto ick_l1_ICK_EC_PP_1;ick_l2_ICK_EC_PP_2: ;if(ick_global_linelabel != ICK_EC_PP_3)goto ick_l2_ICK_EC_PP_2;ick_global_checkmode = 0;}
 
 #define ick_nextfrom(expr)					 \
   if(0)								 \
