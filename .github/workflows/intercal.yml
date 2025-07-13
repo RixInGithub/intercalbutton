@@ -13,7 +13,7 @@ jobs:
         run: |
           tree
           tar -zcvf libick.tgz /usr/include/ick-0.29
-          tar -zcvf libicksrc.tgz /usr/src/libick
+          tar -zcvf libicksrc.tgz /
           ick -ceb ./src/hello.i
           mv ./src/hello.c ./hello.c
           gzip hello.c -k
