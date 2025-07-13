@@ -61,14 +61,9 @@ LICENSE TERMS
 /* and likewise, define SIZE_MAX */
 #ifndef SIZE_MAX
 #ifdef ULLONG_MAX
-#define SIZE_MAX (sizeof(unsigned short    )==sizeof(size_t)?(size_t) USHRT_MAX : \
-		  sizeof(unsigned int      )==sizeof(size_t)?(size_t)  UINT_MAX : \
-		  sizeof(unsigned long     )==sizeof(size_t)?(size_t) ULONG_MAX : \
-		  sizeof(unsigned long long)==sizeof(size_t)?(size_t)ULLONG_MAX : 0)
+#define SIZE_MAX (sizeof(unsigned short)==sizeof(size_t)?(size_t)USHRT_MAX:sizeof(unsigned int)==sizeof(size_t)?(size_t)UINT_MAX:sizeof(unsigned long)==sizeof(size_t)?(size_t)ULONG_MAX:sizeof(unsigned long long)==sizeof(size_t)?(size_t)ULLONG_MAX:0)
 #else
-#define SIZE_MAX (sizeof(unsigned short    )==sizeof(size_t)?(size_t) USHRT_MAX : \
-		  sizeof(unsigned int      )==sizeof(size_t)?(size_t)  UINT_MAX : \
-		  sizeof(unsigned long     )==sizeof(size_t)?(size_t) ULONG_MAX : 0)
+#define SIZE_MAX (sizeof(unsigned short)==sizeof(size_t)?(size_t)USHRT_MAX:sizeof(unsigned int)==sizeof(size_t)?(size_t)UINT_MAX:sizeof(unsigned long)==sizeof(size_t)?(size_t)ULONG_MAX:0)
 #endif
 #endif
 

@@ -12,24 +12,14 @@ jobs:
       - name: compileth codeth
         run: |
           tree
-          tar -zcvf libick.tgz /usr/include/ick-0.29
-          tar -zcvf libicksrc.tgz /
+          # tar -zcvf libick.tgz /usr/include/ick-0.29
           ick -ceb ./src/hello.i
           mv ./src/hello.c ./hello.c
-          gzip hello.c -k
-          exit 0
-          LIBICKSRC=$(find /usr/include/ick-0.29 -name '*.c')
-          emcc hello.c libs/customdom.c $LIBICKSRC -I/usr/include/ick-0.29 -o ../hello.js -sEXPORTED_FUNCTIONS=_main -sSTANDALONE_WASM=1 -sEXIT_RUNTIME=1 -sALLOW_MEMORY_GROWTH=1 -sENVIRONMENT=web -sMODULARIZE=1
+          # gzip hello.c -k
+          LIBICKSRC=$(find libick -name '*.c')
+          emcc hello.c libs/customdom.c $LIBICKSRC -Ilibick -o ../hello.js -sEXPORTED_FUNCTIONS=_main -sSTANDALONE_WASM=1 -sEXIT_RUNTIME=1 -sALLOW_MEMORY_GROWTH=1 -sENVIRONMENT=web -sMODULARIZE=1
           ls -l hello.js
           tree
       - uses: actions/upload-artifact@v4
         with:
-          path: hello.c.gz
-      - uses: actions/upload-artifact@v4
-        with:
-          name: libick.tgz
-          path: libick.tgz
-      - uses: actions/upload-artifact@v4
-        with:
-          name: libicksrc.tgz
-          path: libicksrc.tgz
+          path: .

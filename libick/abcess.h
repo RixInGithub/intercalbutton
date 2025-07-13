@@ -14,19 +14,19 @@
 /* We use the +1 trick here, as it works whether the values substituted in are
    the null string, 0, or positive. */
 #ifndef HAVE_STDBOOL_H
-# define HAVE_STDBOOL_H @HAVE_STDBOOL_H@ + 1
+# define HAVE_STDBOOL_H 1 + 1
 # if HAVE_STDBOOL_H == 1
 #  undef HAVE_STDBOOL_H
 # endif
 #endif
 #ifndef HAVE__BOOL
-# define HAVE__BOOL @HAVE__BOOL@ + 1
+# define HAVE__BOOL 1 + 1
 # if HAVE__BOOL == 1
 #  undef HAVE__BOOL
 # endif
 #endif
 #ifndef HAVE_STDINT_H
-# define HAVE_STDINT_H @HAVE_STDINT_H@ + 1
+# define HAVE_STDINT_H 1 + 1
 # if HAVE_STDINT_H == 1
 #  undef HAVE_STDINT_H
 # endif
